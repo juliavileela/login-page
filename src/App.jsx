@@ -7,17 +7,19 @@ export default function App() {
 
     function login(event){
         event.preventDefault()
-        if(email === "" || password === "")
+        if(email === "" || password === ""){
             toast.error("Email e senha são obrigatórios!")
         return
+        }
+
+        if(password.length < 8) { 
+            toast.error("A senha deve ter no minimo 8 caracteres!")
+            return
+        }
     
         toast.success("Login realizado com sucesso!")
 
     }
-        if(password;length < 8) { 
-            toast.error("A senha deve ter no minimo 8 caracteres!")
-            return
-        }
         
     return (
         <div className="w-full h-screen bg-[url('../public/bg-netflix.jpg')]">
